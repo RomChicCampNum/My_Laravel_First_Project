@@ -8,8 +8,14 @@ class ProductController extends Controller
 {
     //
 
-    public function index() {
+    public function index()
+    {
+        return view('product-list');
+    }
 
-        return 'Liste des produits';
+
+    public function details($id)
+    {
+        return view('product-details', ['id' => $id]);
     }
 }

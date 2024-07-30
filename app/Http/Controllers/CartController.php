@@ -9,6 +9,6 @@ class CartController extends Controller
     //
     public function index() {
 
-        return 'Panier';
+        return view ('cart');
     }
 }
