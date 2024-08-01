@@ -17,16 +17,14 @@
 
 <H1>Liste des produits</H1>
 
-<div class="container">
-    <div class="row">
-        @for ($i = 0; $i < 10; $i++)
-            <div class="col-md-3">
-                @include('thumbnail')
-            </div>
-        @endfor
-    </div>
-</div>
+@foreach($products as $product)
+    <h2>{{$product -> name}}</h2>
+    <img src="{{$product -> image}}" alt="stone image" width="200px">
+    <p>Price:{{$product -> price}}</p>
 
+
+
+@endforeach
 
 
 
