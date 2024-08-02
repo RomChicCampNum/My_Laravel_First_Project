@@ -1,33 +1,51 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <title>Homepage</title>
-</head>
-<body>
+@extends('layout')
+@section('title', 'Ma Boutique Laravel')
 
-@include('header')
-
-<h1>Homepage</h1>
-<div>
-    <p>Life is available only in the present moment. - Thich Nhat Hanh</p>
+@section('content')
+<h1>Ma Boutique Laravel</h1>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="path_to_your_image1.jpg" class="d-block w-100" alt="Image 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Image 1</h5>
+                <p>Description de l'image 1.</p>
+                <a class="btn btn-primary" href="#" role="button">Découvrir</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="path_to_your_image2.jpg" class="d-block w-100" alt="Image 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Image 2</h5>
+                <p>Description de l'image 2.</p>
+                <a class="btn btn-primary" href="#" role="button">Découvrir</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="path_to_your_image3.jpg" class="d-block w-100" alt="Image 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Image 3</h5>
+                <p>Description de l'image 3.</p>
+                <a class="btn btn-primary" href="#" role="button">Découvrir</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-    </main>
 
-@include('footer')
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-
-</body>
-</html>
+@endsection
 
 
