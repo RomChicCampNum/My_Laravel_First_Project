@@ -8,12 +8,11 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-//    public function index()
-//    {
-//        $products = DB::select('select * from products');
-//
-//        return view('product-list', ['products' => $products]);
-//    }
+    public function index()
+    {
+        $products = Product::orderBy('id')->get();
+        return view('product-list', ['products' => $products]);
+    }
 
 //    public function show($id)
 //    {
@@ -40,6 +39,6 @@ class ProductController extends Controller
     public function show($id): \Illuminate\View\View
     {
         $product = Product::findOrFail($id); // Utilisation de findOrFail pour une gestion améliorée des erreurs
-        return view('products.show', compact('product'));
+        return view('product-details', ['product' => $product]);
     }
 }

@@ -2,42 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    //
-//    public function index()
-//    {
-//        $products = DB::select('select * from products limit 3');
-//        return view('homepage', ['products' => $products]);
-//    }
     public function index()
     {
-        $categories = [
-            (object)[
-                'title' => 'Sneakers',
-                'description' => 'Découvrez notre collection de sneakers tendance.',
-                'image' => 'path/to/sneakers-image.jpg',
-                'link' => '/category/sneakers'
-            ],
-            (object)[
-                'title' => 'Chaussures de skate',
-                'description' => 'Explorez notre gamme de chaussures de skate.',
-                'image' => 'path/to/skate-shoes-image.jpg',
-                'link' => '/category/skate-shoes'
-            ],
-            (object)[
-                'title' => 'Chaussures de ville',
-                'description' => 'Découvrez notre sélection de chaussures de ville élégantes.',
-                'image' => 'path/to/dress-shoes-image.jpg',
-                'link' => '/category/dress-shoes'
-            ]
+        // Mappe les identifiants de catégorie aux noms de catégorie
+        $categoriesMap = [
+            1 => 'Chaussures de Sport',
+            2 => 'Sneakers',
+            3 => 'Chaussures de Ville'
         ];
 
-        return view('votre_vue', compact('categories'));
-    }
+        // Récupère un produit aléatoire pour chaque catégorie
+        $categories = collect($categoriesMap)->map(function ($categoryName, $categoryId) {
+            $product = Product::where('categories_id1', $categoryId)
+                ->inRandomOrder() // Sélectionne un produit aléatoire
+                ->first(); // Récupère le premier produit trouvé
 
+            // Retourne un objet avec les propriétés attendues
+            return (object)[
+                'title' => $categoryName,
+                'description' => $product ? $product->description : 'Aucune description disponible',
+                'image' => $product ? $product->image : 'path/to/default-image.jpg', // Remplace par une image par défaut si aucun produit n'est trouvé
+                'link' => $product ? $product->id : '#'
+            ];
+        });
+
+        return view('homepage', compact('categories'));
+    }
 
 }

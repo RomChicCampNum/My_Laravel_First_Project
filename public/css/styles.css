@@ -1,0 +1,13 @@
+.card-img-top {
+    height: 400px; /* Hauteur fixe */
+    object-fit: cover; /* Rognage de l'image pour couvrir la zone sans distorsion */
+    width: 100%; /* Assure que l'image remplit la largeur de la carte */
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Ajuste le nombre de lignes affichées, ici 2 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

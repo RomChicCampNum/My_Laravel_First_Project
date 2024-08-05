@@ -9,8 +9,11 @@
         <h1>Liste des Produits Triés par Prix</h1>
         <ul>
             @foreach ($products as $product)
-                <li>{{ $product->name }} - {{ number_format($product->price, 2) }} €</li>
+                <a href="/products/{{$product -> id}}">
+                    <li>{{ $product->name }} - {{ number_format($product->price, 2) }} €</li>
+                </a>
             @endforeach
+
         </ul>
     </div>
 

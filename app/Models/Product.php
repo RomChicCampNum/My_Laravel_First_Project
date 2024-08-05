@@ -13,7 +13,7 @@ class Product extends Model
     public $timestamps = false;
 
     // Spécifie les attributs qui peuvent être assignés en masse
-    protected $fillable = ['name', 'price'];
+    protected $fillable = ['name', 'price', 'image', 'category'];
 
     // Typage des attributs (optionnel, mais peut être utile pour PHP 8)
     protected $casts = [
