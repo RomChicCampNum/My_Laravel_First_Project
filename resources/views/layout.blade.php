@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -20,12 +20,7 @@
 </div>
 
 <!-- Footer -->
-<footer class="bg-light text-center text-lg-start mt-auto">
-    <div class="text-center p-3">
-        © 2024 Ma Boutique:
-        <a class="text-dark" href="#">MaBoutiqueLaravel.com</a>
-    </div>
-</footer>
+@include('footer')
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+6q2YbZoP0IKbfo0pRYA6cIIFkP0J"

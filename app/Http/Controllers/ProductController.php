@@ -25,14 +25,14 @@ class ProductController extends Controller
     public function indexByName(): \Illuminate\View\View
     {
         $products = Product::orderBy('name')->get();
-        return view('index_by_name', compact('products'));
+        return view('index_by_name', ['products' => $products]);
     }
 
     // Affiche la liste des produits triés par prix
     public function indexByPrice(): \Illuminate\View\View
     {
         $products = Product::orderBy('price')->get();
-        return view('index_by_price', compact('products'));
+        return view('index_by_price', ['products' => $products]);
     }
 
     // Affiche les détails d'un produit

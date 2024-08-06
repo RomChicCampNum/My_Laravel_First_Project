@@ -6,8 +6,134 @@
 
 .card-text {
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* Ajuste le nombre de lignes affichées, ici 2 lignes */
+    -webkit-line-clamp: 1; /* Ajuste le nombre de lignes affichées, ici 1 ligne */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.navbar-custom, .navbar-brand {
+    background-color: #E2F4FC;
+    color: #FF2E63;
+}
+
+a.nav-link.dropdown-toggle {
+    color: #FF2E63;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+a.nav-link {
+    color: #FF2E63;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+a.dropdown-item {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #FF2E63;
+}
+
+ul.dropdown-menu.show {
+    background-color: #E2F4FC;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+footer.py-5 {
+    background-color: #E2F4FC;
+}
+
+footer .container {
+    padding: 5px;
+}
+
+footer .col-md-3, footer .col-md-4 {
+    margin-bottom: 5px;
+}
+
+footer p, footer h5 {
+    color: #FF2E63;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+footer a {
+    color: #FF2E63;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .list-unstyled li {
+    margin-right: 10px;
+}
+
+footer .list-unstyled li a {
+    color: #FF2E63;
+}
+
+.descript1Item {
+    width: 80%;
+    margin: auto;
+}
+
+.stock {
+    background-color: #8be392;
+    padding-left: 0.5vw;
+    width: 6vw;
+}
+
+.discount {
+    width: 4vw;
+    padding-left: 0.5vw;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.custom-thumbnail {
+    padding: 2vw;
+    height: 35vh;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.custom-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#product-image {
+    width: 6vw;
+}
+
+#quantity-thumbnail {
+    width: 2.5vw;
+}
+
+.border-cart {
+    padding: 2vw;
+    border: 1px solid black;
+}
+
+th {
+    width: 15vw;
+}
+
+.navbar-custom .container {
+    padding-left: 5px;
+    padding-right: 5px;
 }
