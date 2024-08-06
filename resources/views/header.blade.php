@@ -31,10 +31,10 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="{{ url('/products') }}">Toutes les chaussures</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="product-list.blade.php">Chaussures de Sport</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product-list.blade.php">Sneakers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product-list.blade.php">Chaussures de Ville</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Panier</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/products') }}">Chaussures de Sport</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/products') }}">Sneakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/products') }}">Chaussures de Ville</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/cart') }}">Panier</a></li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
