@@ -1,40 +1,58 @@
 @extends('backoffice.layout')
-
 @section('title', 'Ajouter un produit')
 
 @section('content')
     <h1>Ajouter un produit</h1>
 
-    <form action="{{route('backoffice.create')}}" method="POST">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{ url('/backoffice') }}" method="POST">
         @csrf
-        <div class="mb-3">
-            <label for="name" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+
+        <div class="form-group">
+            <label for="name">Nom du produit</label>
+            <input type="text" name="name" class="form-control" value="{{ old('name') }}">
         </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" required></textarea>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" class="form-control">{{ old('description') }}</textarea>
         </div>
-        <div class="mb-3">
-            <label for="price" class="form-label">Prix</label>
-            <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+
+        <div class="form-group">
+            <label for="price">Prix</label>
+            <input type="number" name="price" class="form-control" value="{{ old('price') }}">
         </div>
-        <div class="mb-3">
-            <label for="weight" class="form-label">Poids</label>
-            <input type="number" class="form-control" id="weight" name="weight" step="0.01">
+
+        <div class="form-group">
+            <label for="weight">Poids</label>
+            <input type="number" name="weight" class="form-control" value="{{ old('weight') }}">
         </div>
-        <div class="mb-3">
-            <label for="image" class="form-label">URL de l'image</label>
-            <input type="text" class="form-control" id="image" name="image" required>
+
+        <div class="form-group">
+            <label for="image">Image URL</label>
+            <input type="url" name="image" class="form-control" value="{{ old('image') }}">
         </div>
-        <div class="mb-3">
-            <label for="quantity" class="form-label">Quantité</label>
-            <input type="number" class="form-control" id="quantity" name="quantity" step="0">
+
+        <div class="form-group">
+            <label for="quantity">Quantité</label>
+            <input type="number" name="quantity" class="form-control" value="{{ old('quantity') }}">
         </div>
-        <div class="mb-3">
-            <label for="categories_id1" class="form-label">Catégorie</label>
-            <input type="number" class="form-control" id="categories_id1" name="categories_id1" required>
+
+        <div class="form-group">
+            <label for="categories_id1">Catégorie</label>
+            <input type="number" name="categories_id1" class="form-control" value="{{ old('categories_id1') }}">
         </div>
+
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
 @endsection
+
